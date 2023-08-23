@@ -56,11 +56,11 @@ npm run build
 
 #### git
 
-If the library is hosted at a git repository, e.g.https://github.com/qovery/qovery-client-javascript
+If the library is hosted at a git repository, e.g.https://github.com/qovery/qovery-client-ws-javascript
 then install it via:
 
 ```shell
-    npm install qovery/qovery-client-javascript --save
+    npm install qovery/qovery-client-ws-javascript --save
 ```
 
 ### For browser
