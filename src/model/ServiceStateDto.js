@@ -68,13 +68,6 @@ export default class ServiceStateDto {
         "WARNING" = "WARNING";
 
     
-        /**
-         * value: "UNKNOWN"
-         * @const
-         */
-        "UNKNOWN" = "UNKNOWN";
-
-    
 
     /**
     * Returns a <code>ServiceStateDto</code> enum value from a Javascript object name.

@@ -17,6 +17,4 @@
 
 * `WARNING` (value: `"WARNING"`)
 
-* `UNKNOWN` (value: `"UNKNOWN"`)
-
 
