@@ -22,7 +22,7 @@ class ServiceInfraLogResponseDto {
     /**
      * Constructs a new <code>ServiceInfraLogResponseDto</code>.
      * @alias module:model/ServiceInfraLogResponseDto
-     * @param createdAt {Number} Unix timestamp with millisecond precision
+     * @param createdAt {Number} 
      * @param message {String} 
      */
     constructor(createdAt, message) { 
@@ -65,7 +65,6 @@ class ServiceInfraLogResponseDto {
 }
 
 /**
- * Unix timestamp with millisecond precision
  * @member {Number} created_at
  */
 ServiceInfraLogResponseDto.prototype['created_at'] = undefined;

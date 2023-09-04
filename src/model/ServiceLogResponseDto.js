@@ -22,7 +22,7 @@ class ServiceLogResponseDto {
     /**
      * Constructs a new <code>ServiceLogResponseDto</code>.
      * @alias module:model/ServiceLogResponseDto
-     * @param createdAt {Number} Unix timestamp with millisecond precision
+     * @param createdAt {Number} 
      * @param message {String} 
      * @param podName {String} 
      * @param version {String} 
@@ -75,7 +75,6 @@ class ServiceLogResponseDto {
 }
 
 /**
- * Unix timestamp with millisecond precision
  * @member {Number} created_at
  */
 ServiceLogResponseDto.prototype['created_at'] = undefined;
