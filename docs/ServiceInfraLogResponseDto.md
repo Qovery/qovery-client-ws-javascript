@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdAt** | **Number** |  | 
+**createdAt** | **Number** | Unix timestamp with millisecond precision | 
 **message** | **String** |  | 
 
 
