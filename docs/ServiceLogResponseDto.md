@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdAt** | **Number** |  | [optional] 
+**createdAt** | **Number** | Unix timestamp with millisecond precision | 
 **message** | **String** |  | 
 **podName** | **String** |  | 
 **version** | **String** |  | 

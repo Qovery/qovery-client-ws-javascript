@@ -22,11 +22,12 @@ class ServiceInfraLogResponseDto {
     /**
      * Constructs a new <code>ServiceInfraLogResponseDto</code>.
      * @alias module:model/ServiceInfraLogResponseDto
+     * @param createdAt {Number} Unix timestamp with millisecond precision
      * @param message {String} 
      */
-    constructor(message) { 
+    constructor(createdAt, message) { 
         
-        ServiceInfraLogResponseDto.initialize(this, message);
+        ServiceInfraLogResponseDto.initialize(this, createdAt, message);
     }
 
     /**
@@ -34,7 +35,8 @@ class ServiceInfraLogResponseDto {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, message) { 
+    static initialize(obj, createdAt, message) { 
+        obj['created_at'] = createdAt;
         obj['message'] = message;
     }
 
@@ -63,6 +65,7 @@ class ServiceInfraLogResponseDto {
 }
 
 /**
+ * Unix timestamp with millisecond precision
  * @member {Number} created_at
  */
 ServiceInfraLogResponseDto.prototype['created_at'] = undefined;
