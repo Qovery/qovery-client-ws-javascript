@@ -47,6 +47,13 @@ export default class ServiceType {
         "JOB" = "JOB";
 
     
+        /**
+         * value: "HELM"
+         * @const
+         */
+        "HELM" = "HELM";
+
+    
 
     /**
     * Returns a <code>ServiceType</code> enum value from a Javascript object name.
