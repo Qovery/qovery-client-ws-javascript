@@ -33,6 +33,13 @@ export default class UnitDto {
         "MiB" = "MiB";
 
     
+        /**
+         * value: "GiB"
+         * @const
+         */
+        "GiB" = "GiB";
+
+    
 
     /**
     * Returns a <code>UnitDto</code> enum value from a Javascript object name.

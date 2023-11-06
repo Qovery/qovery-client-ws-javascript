@@ -7,4 +7,6 @@
 
 * `MiB` (value: `"MiB"`)
 
+* `GiB` (value: `"GiB"`)
+
 
