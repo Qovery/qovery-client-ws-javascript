@@ -28,14 +28,15 @@ class EnvironmentStatusDto {
      * @param applications {Array.<module:model/ApplicationStatusDto>} 
      * @param containers {Array.<module:model/ApplicationStatusDto>} 
      * @param databases {Array.<module:model/DatabaseStatusDto>} 
+     * @param helms {Array.<module:model/ApplicationStatusDto>} 
      * @param id {String} 
      * @param jobs {Array.<module:model/ApplicationStatusDto>} 
      * @param projectId {String} 
      * @param state {module:model/ServiceStateDto} 
      */
-    constructor(applications, containers, databases, id, jobs, projectId, state) { 
+    constructor(applications, containers, databases, helms, id, jobs, projectId, state) { 
         
-        EnvironmentStatusDto.initialize(this, applications, containers, databases, id, jobs, projectId, state);
+        EnvironmentStatusDto.initialize(this, applications, containers, databases, helms, id, jobs, projectId, state);
     }
 
     /**
@@ -43,10 +44,11 @@ class EnvironmentStatusDto {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, applications, containers, databases, id, jobs, projectId, state) { 
+    static initialize(obj, applications, containers, databases, helms, id, jobs, projectId, state) { 
         obj['applications'] = applications;
         obj['containers'] = containers;
         obj['databases'] = databases;
+        obj['helms'] = helms;
         obj['id'] = id;
         obj['jobs'] = jobs;
         obj['project_id'] = projectId;
@@ -72,6 +74,9 @@ class EnvironmentStatusDto {
             }
             if (data.hasOwnProperty('databases')) {
                 obj['databases'] = ApiClient.convertToType(data['databases'], [DatabaseStatusDto]);
+            }
+            if (data.hasOwnProperty('helms')) {
+                obj['helms'] = ApiClient.convertToType(data['helms'], [ApplicationStatusDto]);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -106,6 +111,11 @@ EnvironmentStatusDto.prototype['containers'] = undefined;
  * @member {Array.<module:model/DatabaseStatusDto>} databases
  */
 EnvironmentStatusDto.prototype['databases'] = undefined;
+
+/**
+ * @member {Array.<module:model/ApplicationStatusDto>} helms
+ */
+EnvironmentStatusDto.prototype['helms'] = undefined;
 
 /**
  * @member {String} id
