@@ -13,6 +13,7 @@ docs/ContainerStatusDtoLastTerminatedState.md
 docs/DatabaseStatusDto.md
 docs/DeploymentApi.md
 docs/EnvironmentStatusDto.md
+docs/InfraStatusApi.md
 docs/LogsApi.md
 docs/MetricDto.md
 docs/PodStatusDto.md
@@ -31,6 +32,7 @@ mocha.opts
 package.json
 src/ApiClient.js
 src/api/DeploymentApi.js
+src/api/InfraStatusApi.js
 src/api/LogsApi.js
 src/api/ServiceMetricsApi.js
 src/api/ServiceStatusApi.js
@@ -55,6 +57,7 @@ src/model/ServiceStatusDto.js
 src/model/ServiceType.js
 src/model/UnitDto.js
 test/api/DeploymentApi.spec.js
+test/api/InfraStatusApi.spec.js
 test/api/LogsApi.spec.js
 test/api/ServiceMetricsApi.spec.js
 test/api/ServiceStatusApi.spec.js

@@ -33,6 +33,7 @@ import ServiceStatusDto from './model/ServiceStatusDto';
 import ServiceType from './model/ServiceType';
 import UnitDto from './model/UnitDto';
 import DeploymentApi from './api/DeploymentApi';
+import InfraStatusApi from './api/InfraStatusApi';
 import LogsApi from './api/LogsApi';
 import ServiceMetricsApi from './api/ServiceMetricsApi';
 import ServiceStatusApi from './api/ServiceStatusApi';
@@ -195,6 +196,12 @@ export {
     * @property {module:api/DeploymentApi}
     */
     DeploymentApi,
+
+    /**
+    * The InfraStatusApi service constructor.
+    * @property {module:api/InfraStatusApi}
+    */
+    InfraStatusApi,
 
     /**
     * The LogsApi service constructor.

@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *WebsocketGateway.DeploymentApi* | [**handleDeploymentLogsRequest**](docs/DeploymentApi.md#handleDeploymentLogsRequest) | **GET** /deployment/logs | 
 *WebsocketGateway.DeploymentApi* | [**handleDeploymentStatusRequest**](docs/DeploymentApi.md#handleDeploymentStatusRequest) | **GET** /deployment/status | 
+*WebsocketGateway.InfraStatusApi* | [**handleInfraStatusRequest**](docs/InfraStatusApi.md#handleInfraStatusRequest) | **GET** /infra/status | 
 *WebsocketGateway.LogsApi* | [**handleInfraLogsRequest**](docs/LogsApi.md#handleInfraLogsRequest) | **GET** /infra/logs | 
 *WebsocketGateway.LogsApi* | [**handleServiceLogsRequest**](docs/LogsApi.md#handleServiceLogsRequest) | **GET** /service/logs | 
 *WebsocketGateway.ServiceMetricsApi* | [**handleMetricsRequest**](docs/ServiceMetricsApi.md#handleMetricsRequest) | **GET** /service/metrics | 
