@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new WebsocketGateway.ServiceLogResponseDto();
+    instance = new WebsocketGateway.NodeResourceDto();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,40 +47,34 @@
       object[property] = value;
   }
 
-  describe('ServiceLogResponseDto', function() {
-    it('should create an instance of ServiceLogResponseDto', function() {
-      // uncomment below and update the code to test ServiceLogResponseDto
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
-      //expect(instance).to.be.a(WebsocketGateway.ServiceLogResponseDto);
+  describe('NodeResourceDto', function() {
+    it('should create an instance of NodeResourceDto', function() {
+      // uncomment below and update the code to test NodeResourceDto
+      //var instance = new WebsocketGateway.NodeResourceDto();
+      //expect(instance).to.be.a(WebsocketGateway.NodeResourceDto);
     });
 
-    it('should have the property containerName (base name: "container_name")', function() {
-      // uncomment below and update the code to test the property containerName
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
+    it('should have the property cpuMilli (base name: "cpu_milli")', function() {
+      // uncomment below and update the code to test the property cpuMilli
+      //var instance = new WebsocketGateway.NodeResourceDto();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
+    it('should have the property ephemeralStorageGib (base name: "ephemeral_storage_gib")', function() {
+      // uncomment below and update the code to test the property ephemeralStorageGib
+      //var instance = new WebsocketGateway.NodeResourceDto();
       //expect(instance).to.be();
     });
 
-    it('should have the property message (base name: "message")', function() {
-      // uncomment below and update the code to test the property message
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
+    it('should have the property memoryMib (base name: "memory_mib")', function() {
+      // uncomment below and update the code to test the property memoryMib
+      //var instance = new WebsocketGateway.NodeResourceDto();
       //expect(instance).to.be();
     });
 
-    it('should have the property podName (base name: "pod_name")', function() {
-      // uncomment below and update the code to test the property podName
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property version (base name: "version")', function() {
-      // uncomment below and update the code to test the property version
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
+    it('should have the property pods (base name: "pods")', function() {
+      // uncomment below and update the code to test the property pods
+      //var instance = new WebsocketGateway.NodeResourceDto();
       //expect(instance).to.be();
     });
 

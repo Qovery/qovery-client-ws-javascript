@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new WebsocketGateway.InfraStatusApi();
+    instance = new WebsocketGateway.ClusterStatusApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,11 +47,11 @@
       object[property] = value;
   }
 
-  describe('InfraStatusApi', function() {
-    describe('handleInfraStatusRequest', function() {
-      it('should call handleInfraStatusRequest successfully', function(done) {
-        //uncomment below and update the code to test handleInfraStatusRequest
-        //instance.handleInfraStatusRequest(function(error) {
+  describe('ClusterStatusApi', function() {
+    describe('handleClusterStatusRequest', function() {
+      it('should call handleClusterStatusRequest successfully', function(done) {
+        //uncomment below and update the code to test handleClusterStatusRequest
+        //instance.handleClusterStatusRequest(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

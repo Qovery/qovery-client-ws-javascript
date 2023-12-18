@@ -13,17 +13,18 @@
 
 
 import ApiClient from "../ApiClient";
+import ClusterStatusDto from '../model/ClusterStatusDto';
 
 /**
-* InfraStatus service.
-* @module api/InfraStatusApi
+* ClusterStatus service.
+* @module api/ClusterStatusApi
 * @version $(grep 'version' _build/openapi.yaml | head -1 | tr ':' '\n' | tail -1 | tr -d ' ')
 */
-export default class InfraStatusApi {
+export default class ClusterStatusApi {
 
     /**
-    * Constructs a new InfraStatusApi. 
-    * @alias module:api/InfraStatusApi
+    * Constructs a new ClusterStatusApi. 
+    * @alias module:api/ClusterStatusApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -34,28 +35,28 @@ export default class InfraStatusApi {
 
 
     /**
-     * Callback function to receive the result of the handleInfraStatusRequest operation.
-     * @callback module:api/InfraStatusApi~handleInfraStatusRequestCallback
+     * Callback function to receive the result of the handleClusterStatusRequest operation.
+     * @callback module:api/ClusterStatusApi~handleClusterStatusRequestCallback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {module:model/ClusterStatusDto} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {String} organization 
      * @param {String} cluster 
-     * @param {module:api/InfraStatusApi~handleInfraStatusRequestCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @param {module:api/ClusterStatusApi~handleClusterStatusRequestCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ClusterStatusDto}
      */
-    handleInfraStatusRequest(organization, cluster, callback) {
+    handleClusterStatusRequest(organization, cluster, callback) {
       let postBody = null;
       // verify the required parameter 'organization' is set
       if (organization === undefined || organization === null) {
-        throw new Error("Missing the required parameter 'organization' when calling handleInfraStatusRequest");
+        throw new Error("Missing the required parameter 'organization' when calling handleClusterStatusRequest");
       }
       // verify the required parameter 'cluster' is set
       if (cluster === undefined || cluster === null) {
-        throw new Error("Missing the required parameter 'cluster' when calling handleInfraStatusRequest");
+        throw new Error("Missing the required parameter 'cluster' when calling handleClusterStatusRequest");
       }
 
       let pathParams = {
@@ -72,9 +73,9 @@ export default class InfraStatusApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = ClusterStatusDto;
       return this.apiClient.callApi(
-        '/infra/status', 'GET',
+        '/cluster/status', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

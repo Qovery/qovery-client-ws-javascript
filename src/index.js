@@ -15,6 +15,8 @@
 import ApiClient from './ApiClient';
 import ApplicationStatusDto from './model/ApplicationStatusDto';
 import CertificateStatusDto from './model/CertificateStatusDto';
+import ClusterNodeDto from './model/ClusterNodeDto';
+import ClusterStatusDto from './model/ClusterStatusDto';
 import ContainerStateDto from './model/ContainerStateDto';
 import ContainerStateTerminatedDto from './model/ContainerStateTerminatedDto';
 import ContainerStatusDto from './model/ContainerStatusDto';
@@ -23,6 +25,11 @@ import ContainerStatusDtoLastTerminatedState from './model/ContainerStatusDtoLas
 import DatabaseStatusDto from './model/DatabaseStatusDto';
 import EnvironmentStatusDto from './model/EnvironmentStatusDto';
 import MetricDto from './model/MetricDto';
+import NodeAddressDto from './model/NodeAddressDto';
+import NodeConditionDto from './model/NodeConditionDto';
+import NodePodInfoDto from './model/NodePodInfoDto';
+import NodeResourceDto from './model/NodeResourceDto';
+import NodeTaintDto from './model/NodeTaintDto';
 import PodStatusDto from './model/PodStatusDto';
 import ResourceStatusDto from './model/ResourceStatusDto';
 import ServiceInfraLogResponseDto from './model/ServiceInfraLogResponseDto';
@@ -32,8 +39,8 @@ import ServiceStateDto from './model/ServiceStateDto';
 import ServiceStatusDto from './model/ServiceStatusDto';
 import ServiceType from './model/ServiceType';
 import UnitDto from './model/UnitDto';
+import ClusterStatusApi from './api/ClusterStatusApi';
 import DeploymentApi from './api/DeploymentApi';
-import InfraStatusApi from './api/InfraStatusApi';
 import LogsApi from './api/LogsApi';
 import ServiceMetricsApi from './api/ServiceMetricsApi';
 import ServiceStatusApi from './api/ServiceStatusApi';
@@ -90,6 +97,18 @@ export {
     CertificateStatusDto,
 
     /**
+     * The ClusterNodeDto model constructor.
+     * @property {module:model/ClusterNodeDto}
+     */
+    ClusterNodeDto,
+
+    /**
+     * The ClusterStatusDto model constructor.
+     * @property {module:model/ClusterStatusDto}
+     */
+    ClusterStatusDto,
+
+    /**
      * The ContainerStateDto model constructor.
      * @property {module:model/ContainerStateDto}
      */
@@ -136,6 +155,36 @@ export {
      * @property {module:model/MetricDto}
      */
     MetricDto,
+
+    /**
+     * The NodeAddressDto model constructor.
+     * @property {module:model/NodeAddressDto}
+     */
+    NodeAddressDto,
+
+    /**
+     * The NodeConditionDto model constructor.
+     * @property {module:model/NodeConditionDto}
+     */
+    NodeConditionDto,
+
+    /**
+     * The NodePodInfoDto model constructor.
+     * @property {module:model/NodePodInfoDto}
+     */
+    NodePodInfoDto,
+
+    /**
+     * The NodeResourceDto model constructor.
+     * @property {module:model/NodeResourceDto}
+     */
+    NodeResourceDto,
+
+    /**
+     * The NodeTaintDto model constructor.
+     * @property {module:model/NodeTaintDto}
+     */
+    NodeTaintDto,
 
     /**
      * The PodStatusDto model constructor.
@@ -192,16 +241,16 @@ export {
     UnitDto,
 
     /**
+    * The ClusterStatusApi service constructor.
+    * @property {module:api/ClusterStatusApi}
+    */
+    ClusterStatusApi,
+
+    /**
     * The DeploymentApi service constructor.
     * @property {module:api/DeploymentApi}
     */
     DeploymentApi,
-
-    /**
-    * The InfraStatusApi service constructor.
-    * @property {module:api/InfraStatusApi}
-    */
-    InfraStatusApi,
 
     /**
     * The LogsApi service constructor.

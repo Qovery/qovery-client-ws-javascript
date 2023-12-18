@@ -101,12 +101,9 @@ Please follow the [installation](#installation) instruction and execute the foll
 var WebsocketGateway = require('websocket_gateway');
 
 
-var api = new WebsocketGateway.DeploymentApi()
+var api = new WebsocketGateway.ClusterStatusApi()
 var organization = "organization_example"; // {String} 
 var cluster = "cluster_example"; // {String} 
-var project = "project_example"; // {String} 
-var environment = "environment_example"; // {String} 
-var version = "version_example"; // {String} 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -114,7 +111,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.handleDeploymentLogsRequest(organization, cluster, project, environment, version, callback);
+api.handleClusterStatusRequest(organization, cluster, callback);
 
 ```
 
@@ -124,9 +121,9 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*WebsocketGateway.ClusterStatusApi* | [**handleClusterStatusRequest**](docs/ClusterStatusApi.md#handleClusterStatusRequest) | **GET** /cluster/status | 
 *WebsocketGateway.DeploymentApi* | [**handleDeploymentLogsRequest**](docs/DeploymentApi.md#handleDeploymentLogsRequest) | **GET** /deployment/logs | 
 *WebsocketGateway.DeploymentApi* | [**handleDeploymentStatusRequest**](docs/DeploymentApi.md#handleDeploymentStatusRequest) | **GET** /deployment/status | 
-*WebsocketGateway.InfraStatusApi* | [**handleInfraStatusRequest**](docs/InfraStatusApi.md#handleInfraStatusRequest) | **GET** /infra/status | 
 *WebsocketGateway.LogsApi* | [**handleInfraLogsRequest**](docs/LogsApi.md#handleInfraLogsRequest) | **GET** /infra/logs | 
 *WebsocketGateway.LogsApi* | [**handleServiceLogsRequest**](docs/LogsApi.md#handleServiceLogsRequest) | **GET** /service/logs | 
 *WebsocketGateway.ServiceMetricsApi* | [**handleMetricsRequest**](docs/ServiceMetricsApi.md#handleMetricsRequest) | **GET** /service/metrics | 
@@ -137,6 +134,8 @@ Class | Method | HTTP request | Description
 
  - [WebsocketGateway.ApplicationStatusDto](docs/ApplicationStatusDto.md)
  - [WebsocketGateway.CertificateStatusDto](docs/CertificateStatusDto.md)
+ - [WebsocketGateway.ClusterNodeDto](docs/ClusterNodeDto.md)
+ - [WebsocketGateway.ClusterStatusDto](docs/ClusterStatusDto.md)
  - [WebsocketGateway.ContainerStateDto](docs/ContainerStateDto.md)
  - [WebsocketGateway.ContainerStateTerminatedDto](docs/ContainerStateTerminatedDto.md)
  - [WebsocketGateway.ContainerStatusDto](docs/ContainerStatusDto.md)
@@ -145,6 +144,11 @@ Class | Method | HTTP request | Description
  - [WebsocketGateway.DatabaseStatusDto](docs/DatabaseStatusDto.md)
  - [WebsocketGateway.EnvironmentStatusDto](docs/EnvironmentStatusDto.md)
  - [WebsocketGateway.MetricDto](docs/MetricDto.md)
+ - [WebsocketGateway.NodeAddressDto](docs/NodeAddressDto.md)
+ - [WebsocketGateway.NodeConditionDto](docs/NodeConditionDto.md)
+ - [WebsocketGateway.NodePodInfoDto](docs/NodePodInfoDto.md)
+ - [WebsocketGateway.NodeResourceDto](docs/NodeResourceDto.md)
+ - [WebsocketGateway.NodeTaintDto](docs/NodeTaintDto.md)
  - [WebsocketGateway.PodStatusDto](docs/PodStatusDto.md)
  - [WebsocketGateway.ResourceStatusDto](docs/ResourceStatusDto.md)
  - [WebsocketGateway.ServiceInfraLogResponseDto](docs/ServiceInfraLogResponseDto.md)

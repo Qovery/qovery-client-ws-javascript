@@ -1,16 +1,16 @@
-# WebsocketGateway.InfraStatusApi
+# WebsocketGateway.ClusterStatusApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**handleInfraStatusRequest**](InfraStatusApi.md#handleInfraStatusRequest) | **GET** /infra/status | 
+[**handleClusterStatusRequest**](ClusterStatusApi.md#handleClusterStatusRequest) | **GET** /cluster/status | 
 
 
 
-## handleInfraStatusRequest
+## handleClusterStatusRequest
 
-> Object handleInfraStatusRequest(organization, cluster)
+> ClusterStatusDto handleClusterStatusRequest(organization, cluster)
 
 
 
@@ -19,10 +19,10 @@ Method | HTTP request | Description
 ```javascript
 import WebsocketGateway from 'websocket_gateway';
 
-let apiInstance = new WebsocketGateway.InfraStatusApi();
+let apiInstance = new WebsocketGateway.ClusterStatusApi();
 let organization = "organization_example"; // String | 
 let cluster = "cluster_example"; // String | 
-apiInstance.handleInfraStatusRequest(organization, cluster, (error, data, response) => {
+apiInstance.handleClusterStatusRequest(organization, cluster, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ClusterStatusDto**](ClusterStatusDto.md)
 
 ### Authorization
 

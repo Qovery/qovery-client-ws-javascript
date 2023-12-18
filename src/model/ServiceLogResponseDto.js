@@ -22,14 +22,15 @@ class ServiceLogResponseDto {
     /**
      * Constructs a new <code>ServiceLogResponseDto</code>.
      * @alias module:model/ServiceLogResponseDto
+     * @param containerName {String} 
      * @param createdAt {Number} Unix timestamp with millisecond precision
      * @param message {String} 
      * @param podName {String} 
      * @param version {String} 
      */
-    constructor(createdAt, message, podName, version) { 
+    constructor(containerName, createdAt, message, podName, version) { 
         
-        ServiceLogResponseDto.initialize(this, createdAt, message, podName, version);
+        ServiceLogResponseDto.initialize(this, containerName, createdAt, message, podName, version);
     }
 
     /**
@@ -37,7 +38,8 @@ class ServiceLogResponseDto {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, createdAt, message, podName, version) { 
+    static initialize(obj, containerName, createdAt, message, podName, version) { 
+        obj['container_name'] = containerName;
         obj['created_at'] = createdAt;
         obj['message'] = message;
         obj['pod_name'] = podName;
@@ -55,6 +57,9 @@ class ServiceLogResponseDto {
         if (data) {
             obj = obj || new ServiceLogResponseDto();
 
+            if (data.hasOwnProperty('container_name')) {
+                obj['container_name'] = ApiClient.convertToType(data['container_name'], 'String');
+            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Number');
             }
@@ -73,6 +78,11 @@ class ServiceLogResponseDto {
 
 
 }
+
+/**
+ * @member {String} container_name
+ */
+ServiceLogResponseDto.prototype['container_name'] = undefined;
 
 /**
  * Unix timestamp with millisecond precision

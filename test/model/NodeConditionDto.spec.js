@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new WebsocketGateway.ServiceLogResponseDto();
+    instance = new WebsocketGateway.NodeConditionDto();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,40 +47,46 @@
       object[property] = value;
   }
 
-  describe('ServiceLogResponseDto', function() {
-    it('should create an instance of ServiceLogResponseDto', function() {
-      // uncomment below and update the code to test ServiceLogResponseDto
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
-      //expect(instance).to.be.a(WebsocketGateway.ServiceLogResponseDto);
+  describe('NodeConditionDto', function() {
+    it('should create an instance of NodeConditionDto', function() {
+      // uncomment below and update the code to test NodeConditionDto
+      //var instance = new WebsocketGateway.NodeConditionDto();
+      //expect(instance).to.be.a(WebsocketGateway.NodeConditionDto);
     });
 
-    it('should have the property containerName (base name: "container_name")', function() {
-      // uncomment below and update the code to test the property containerName
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
+    it('should have the property lastHeartbeatTime (base name: "last_heartbeat_time")', function() {
+      // uncomment below and update the code to test the property lastHeartbeatTime
+      //var instance = new WebsocketGateway.NodeConditionDto();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "created_at")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
+    it('should have the property lastTransitionTime (base name: "last_transition_time")', function() {
+      // uncomment below and update the code to test the property lastTransitionTime
+      //var instance = new WebsocketGateway.NodeConditionDto();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
+      //var instance = new WebsocketGateway.NodeConditionDto();
       //expect(instance).to.be();
     });
 
-    it('should have the property podName (base name: "pod_name")', function() {
-      // uncomment below and update the code to test the property podName
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
+    it('should have the property reason (base name: "reason")', function() {
+      // uncomment below and update the code to test the property reason
+      //var instance = new WebsocketGateway.NodeConditionDto();
       //expect(instance).to.be();
     });
 
-    it('should have the property version (base name: "version")', function() {
-      // uncomment below and update the code to test the property version
-      //var instance = new WebsocketGateway.ServiceLogResponseDto();
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instance = new WebsocketGateway.NodeConditionDto();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
+      //var instance = new WebsocketGateway.NodeConditionDto();
       //expect(instance).to.be();
     });
 
