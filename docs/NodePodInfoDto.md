@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **cpuMilliLimit** | **Number** |  | [optional] 
 **cpuMilliRequest** | **Number** |  | [optional] 
 **environmentId** | **String** |  | [optional] 
+**imagesVersion** | **{String: String}** |  | 
 **memoryMibLimit** | **Number** |  | [optional] 
 **memoryMibRequest** | **Number** |  | [optional] 
 **name** | **String** |  | 

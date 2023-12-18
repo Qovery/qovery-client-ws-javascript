@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property imagesVersion (base name: "images_version")', function() {
+      // uncomment below and update the code to test the property imagesVersion
+      //var instance = new WebsocketGateway.NodePodInfoDto();
+      //expect(instance).to.be();
+    });
+
     it('should have the property memoryMibLimit (base name: "memory_mib_limit")', function() {
       // uncomment below and update the code to test the property memoryMibLimit
       //var instance = new WebsocketGateway.NodePodInfoDto();

@@ -22,12 +22,13 @@ class NodePodInfoDto {
     /**
      * Constructs a new <code>NodePodInfoDto</code>.
      * @alias module:model/NodePodInfoDto
+     * @param imagesVersion {Object.<String, String>} 
      * @param name {String} 
      * @param namespace {String} 
      */
-    constructor(name, namespace) { 
+    constructor(imagesVersion, name, namespace) { 
         
-        NodePodInfoDto.initialize(this, name, namespace);
+        NodePodInfoDto.initialize(this, imagesVersion, name, namespace);
     }
 
     /**
@@ -35,7 +36,8 @@ class NodePodInfoDto {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, name, namespace) { 
+    static initialize(obj, imagesVersion, name, namespace) { 
+        obj['images_version'] = imagesVersion;
         obj['name'] = name;
         obj['namespace'] = namespace;
     }
@@ -59,6 +61,9 @@ class NodePodInfoDto {
             }
             if (data.hasOwnProperty('environment_id')) {
                 obj['environment_id'] = ApiClient.convertToType(data['environment_id'], 'String');
+            }
+            if (data.hasOwnProperty('images_version')) {
+                obj['images_version'] = ApiClient.convertToType(data['images_version'], {'String': 'String'});
             }
             if (data.hasOwnProperty('memory_mib_limit')) {
                 obj['memory_mib_limit'] = ApiClient.convertToType(data['memory_mib_limit'], 'Number');
@@ -99,6 +104,11 @@ NodePodInfoDto.prototype['cpu_milli_request'] = undefined;
  * @member {String} environment_id
  */
 NodePodInfoDto.prototype['environment_id'] = undefined;
+
+/**
+ * @member {Object.<String, String>} images_version
+ */
+NodePodInfoDto.prototype['images_version'] = undefined;
 
 /**
  * @member {Number} memory_mib_limit
