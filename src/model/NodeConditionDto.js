@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProstTypesTimestamp from './ProstTypesTimestamp';
 
 /**
  * The NodeConditionDto model module.
@@ -57,10 +56,10 @@ class NodeConditionDto {
             obj = obj || new NodeConditionDto();
 
             if (data.hasOwnProperty('last_heartbeat_time')) {
-                obj['last_heartbeat_time'] = ApiClient.convertToType(data['last_heartbeat_time'], ProstTypesTimestamp);
+                obj['last_heartbeat_time'] = ApiClient.convertToType(data['last_heartbeat_time'], 'Number');
             }
             if (data.hasOwnProperty('last_transition_time')) {
-                obj['last_transition_time'] = ApiClient.convertToType(data['last_transition_time'], ProstTypesTimestamp);
+                obj['last_transition_time'] = ApiClient.convertToType(data['last_transition_time'], 'Number');
             }
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
@@ -82,12 +81,12 @@ class NodeConditionDto {
 }
 
 /**
- * @member {module:model/ProstTypesTimestamp} last_heartbeat_time
+ * @member {Number} last_heartbeat_time
  */
 NodeConditionDto.prototype['last_heartbeat_time'] = undefined;
 
 /**
- * @member {module:model/ProstTypesTimestamp} last_transition_time
+ * @member {Number} last_transition_time
  */
 NodeConditionDto.prototype['last_transition_time'] = undefined;
 

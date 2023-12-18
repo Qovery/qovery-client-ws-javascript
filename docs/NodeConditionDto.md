@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lastHeartbeatTime** | [**ProstTypesTimestamp**](ProstTypesTimestamp.md) |  | [optional] 
-**lastTransitionTime** | [**ProstTypesTimestamp**](ProstTypesTimestamp.md) |  | [optional] 
+**lastHeartbeatTime** | **Number** |  | [optional] 
+**lastTransitionTime** | **Number** |  | [optional] 
 **message** | **String** |  | 
 **reason** | **String** |  | 
 **status** | **String** |  | 
