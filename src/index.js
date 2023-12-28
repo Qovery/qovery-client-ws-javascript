@@ -30,9 +30,11 @@ import NodeConditionDto from './model/NodeConditionDto';
 import NodePodInfoDto from './model/NodePodInfoDto';
 import NodeResourceDto from './model/NodeResourceDto';
 import NodeTaintDto from './model/NodeTaintDto';
+import PodDto from './model/PodDto';
 import PodStatusDto from './model/PodStatusDto';
 import ResourceStatusDto from './model/ResourceStatusDto';
 import ServiceInfraLogResponseDto from './model/ServiceInfraLogResponseDto';
+import ServiceListPodsResponseDto from './model/ServiceListPodsResponseDto';
 import ServiceLogResponseDto from './model/ServiceLogResponseDto';
 import ServiceMetricsDto from './model/ServiceMetricsDto';
 import ServiceStateDto from './model/ServiceStateDto';
@@ -42,6 +44,7 @@ import UnitDto from './model/UnitDto';
 import ClusterStatusApi from './api/ClusterStatusApi';
 import DeploymentApi from './api/DeploymentApi';
 import LogsApi from './api/LogsApi';
+import ServiceListPodsApi from './api/ServiceListPodsApi';
 import ServiceMetricsApi from './api/ServiceMetricsApi';
 import ServiceStatusApi from './api/ServiceStatusApi';
 
@@ -187,6 +190,12 @@ export {
     NodeTaintDto,
 
     /**
+     * The PodDto model constructor.
+     * @property {module:model/PodDto}
+     */
+    PodDto,
+
+    /**
      * The PodStatusDto model constructor.
      * @property {module:model/PodStatusDto}
      */
@@ -203,6 +212,12 @@ export {
      * @property {module:model/ServiceInfraLogResponseDto}
      */
     ServiceInfraLogResponseDto,
+
+    /**
+     * The ServiceListPodsResponseDto model constructor.
+     * @property {module:model/ServiceListPodsResponseDto}
+     */
+    ServiceListPodsResponseDto,
 
     /**
      * The ServiceLogResponseDto model constructor.
@@ -257,6 +272,12 @@ export {
     * @property {module:api/LogsApi}
     */
     LogsApi,
+
+    /**
+    * The ServiceListPodsApi service constructor.
+    * @property {module:api/ServiceListPodsApi}
+    */
+    ServiceListPodsApi,
 
     /**
     * The ServiceMetricsApi service constructor.

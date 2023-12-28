@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
 *WebsocketGateway.DeploymentApi* | [**handleDeploymentStatusRequest**](docs/DeploymentApi.md#handleDeploymentStatusRequest) | **GET** /deployment/status | 
 *WebsocketGateway.LogsApi* | [**handleInfraLogsRequest**](docs/LogsApi.md#handleInfraLogsRequest) | **GET** /infra/logs | 
 *WebsocketGateway.LogsApi* | [**handleServiceLogsRequest**](docs/LogsApi.md#handleServiceLogsRequest) | **GET** /service/logs | 
+*WebsocketGateway.ServiceListPodsApi* | [**handleServiceListPodsRequest**](docs/ServiceListPodsApi.md#handleServiceListPodsRequest) | **GET** /service/pods | 
 *WebsocketGateway.ServiceMetricsApi* | [**handleMetricsRequest**](docs/ServiceMetricsApi.md#handleMetricsRequest) | **GET** /service/metrics | 
 *WebsocketGateway.ServiceStatusApi* | [**handleServiceStatusRequest**](docs/ServiceStatusApi.md#handleServiceStatusRequest) | **GET** /service/status | 
 
@@ -149,9 +150,11 @@ Class | Method | HTTP request | Description
  - [WebsocketGateway.NodePodInfoDto](docs/NodePodInfoDto.md)
  - [WebsocketGateway.NodeResourceDto](docs/NodeResourceDto.md)
  - [WebsocketGateway.NodeTaintDto](docs/NodeTaintDto.md)
+ - [WebsocketGateway.PodDto](docs/PodDto.md)
  - [WebsocketGateway.PodStatusDto](docs/PodStatusDto.md)
  - [WebsocketGateway.ResourceStatusDto](docs/ResourceStatusDto.md)
  - [WebsocketGateway.ServiceInfraLogResponseDto](docs/ServiceInfraLogResponseDto.md)
+ - [WebsocketGateway.ServiceListPodsResponseDto](docs/ServiceListPodsResponseDto.md)
  - [WebsocketGateway.ServiceLogResponseDto](docs/ServiceLogResponseDto.md)
  - [WebsocketGateway.ServiceMetricsDto](docs/ServiceMetricsDto.md)
  - [WebsocketGateway.ServiceStateDto](docs/ServiceStateDto.md)

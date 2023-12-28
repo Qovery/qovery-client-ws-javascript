@@ -23,9 +23,12 @@ docs/NodeConditionDto.md
 docs/NodePodInfoDto.md
 docs/NodeResourceDto.md
 docs/NodeTaintDto.md
+docs/PodDto.md
 docs/PodStatusDto.md
 docs/ResourceStatusDto.md
 docs/ServiceInfraLogResponseDto.md
+docs/ServiceListPodsApi.md
+docs/ServiceListPodsResponseDto.md
 docs/ServiceLogResponseDto.md
 docs/ServiceMetricsApi.md
 docs/ServiceMetricsDto.md
@@ -41,6 +44,7 @@ src/ApiClient.js
 src/api/ClusterStatusApi.js
 src/api/DeploymentApi.js
 src/api/LogsApi.js
+src/api/ServiceListPodsApi.js
 src/api/ServiceMetricsApi.js
 src/api/ServiceStatusApi.js
 src/index.js
@@ -61,9 +65,11 @@ src/model/NodeConditionDto.js
 src/model/NodePodInfoDto.js
 src/model/NodeResourceDto.js
 src/model/NodeTaintDto.js
+src/model/PodDto.js
 src/model/PodStatusDto.js
 src/model/ResourceStatusDto.js
 src/model/ServiceInfraLogResponseDto.js
+src/model/ServiceListPodsResponseDto.js
 src/model/ServiceLogResponseDto.js
 src/model/ServiceMetricsDto.js
 src/model/ServiceStateDto.js
@@ -73,6 +79,7 @@ src/model/UnitDto.js
 test/api/ClusterStatusApi.spec.js
 test/api/DeploymentApi.spec.js
 test/api/LogsApi.spec.js
+test/api/ServiceListPodsApi.spec.js
 test/api/ServiceMetricsApi.spec.js
 test/api/ServiceStatusApi.spec.js
 test/model/ApplicationStatusDto.spec.js
@@ -92,9 +99,11 @@ test/model/NodeConditionDto.spec.js
 test/model/NodePodInfoDto.spec.js
 test/model/NodeResourceDto.spec.js
 test/model/NodeTaintDto.spec.js
+test/model/PodDto.spec.js
 test/model/PodStatusDto.spec.js
 test/model/ResourceStatusDto.spec.js
 test/model/ServiceInfraLogResponseDto.spec.js
+test/model/ServiceListPodsResponseDto.spec.js
 test/model/ServiceLogResponseDto.spec.js
 test/model/ServiceMetricsDto.spec.js
 test/model/ServiceStateDto.spec.js
