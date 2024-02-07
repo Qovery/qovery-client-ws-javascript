@@ -74,8 +74,50 @@ class ApplicationStatusDto {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>ApplicationStatusDto</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ApplicationStatusDto</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of ApplicationStatusDto.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        if (data['certificates']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['certificates'])) {
+                throw new Error("Expected the field `certificates` to be an array in the JSON data but got " + data['certificates']);
+            }
+            // validate the optional field `certificates` (array)
+            for (const item of data['certificates']) {
+                CertificateStatusDto.validateJSON(item);
+            };
+        }
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        if (data['pods']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['pods'])) {
+                throw new Error("Expected the field `pods` to be an array in the JSON data but got " + data['pods']);
+            }
+            // validate the optional field `pods` (array)
+            for (const item of data['pods']) {
+                PodStatusDto.validateJSON(item);
+            };
+        }
+
+        return true;
+    }
+
 
 }
+
+ApplicationStatusDto.RequiredProperties = ["certificates", "id", "pods", "state"];
 
 /**
  * @member {Array.<module:model/CertificateStatusDto>} certificates

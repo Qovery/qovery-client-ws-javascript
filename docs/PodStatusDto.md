@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **restartCount** | **Number** |  | 
 **serviceVersion** | **String** |  | 
-**startedAt** | **Number** |  | [optional] 
+**startedAt** | **Number** | Unix timestamp with millisecond precision | [optional] 
 **state** | [**ServiceStateDto**](ServiceStateDto.md) |  | 
 **stateMessage** | **String** |  | 
 **stateReason** | **String** |  | 

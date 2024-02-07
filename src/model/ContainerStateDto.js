@@ -66,10 +66,37 @@ class ContainerStateDto {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>ContainerStateDto</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ContainerStateDto</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of ContainerStateDto.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is a string
+        if (data['state_message'] && !(typeof data['state_message'] === 'string' || data['state_message'] instanceof String)) {
+            throw new Error("Expected the field `state_message` to be a primitive type in the JSON string but got " + data['state_message']);
+        }
+        // ensure the json data is a string
+        if (data['state_reason'] && !(typeof data['state_reason'] === 'string' || data['state_reason'] instanceof String)) {
+            throw new Error("Expected the field `state_reason` to be a primitive type in the JSON string but got " + data['state_reason']);
+        }
+
+        return true;
+    }
+
 
 }
 
+ContainerStateDto.RequiredProperties = ["state"];
+
 /**
+ * Unix timestamp with millisecond precision
  * @member {Number} started_at
  */
 ContainerStateDto.prototype['started_at'] = undefined;

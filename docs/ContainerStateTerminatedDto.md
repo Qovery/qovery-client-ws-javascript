@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **exitCode** | **Number** |  | 
 **exitCodeMessage** | **String** |  | 
-**finishedAt** | **Number** |  | [optional] 
+**finishedAt** | **Number** | Unix timestamp with millisecond precision | [optional] 
 **message** | **String** |  | 
 **reason** | **String** |  | 
 **signal** | **Number** |  | 
-**startedAt** | **Number** |  | [optional] 
+**startedAt** | **Number** | Unix timestamp with millisecond precision | [optional] 
 
 

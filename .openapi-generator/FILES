@@ -11,8 +11,6 @@ docs/ClusterStatusDto.md
 docs/ContainerStateDto.md
 docs/ContainerStateTerminatedDto.md
 docs/ContainerStatusDto.md
-docs/ContainerStatusDtoCurrentState.md
-docs/ContainerStatusDtoLastTerminatedState.md
 docs/DatabaseStatusDto.md
 docs/DeploymentApi.md
 docs/EnvironmentStatusDto.md
@@ -55,8 +53,6 @@ src/model/ClusterStatusDto.js
 src/model/ContainerStateDto.js
 src/model/ContainerStateTerminatedDto.js
 src/model/ContainerStatusDto.js
-src/model/ContainerStatusDtoCurrentState.js
-src/model/ContainerStatusDtoLastTerminatedState.js
 src/model/DatabaseStatusDto.js
 src/model/EnvironmentStatusDto.js
 src/model/MetricDto.js
@@ -89,8 +85,6 @@ test/model/ClusterStatusDto.spec.js
 test/model/ContainerStateDto.spec.js
 test/model/ContainerStateTerminatedDto.spec.js
 test/model/ContainerStatusDto.spec.js
-test/model/ContainerStatusDtoCurrentState.spec.js
-test/model/ContainerStatusDtoLastTerminatedState.spec.js
 test/model/DatabaseStatusDto.spec.js
 test/model/EnvironmentStatusDto.spec.js
 test/model/MetricDto.spec.js

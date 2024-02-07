@@ -57,8 +57,36 @@ class ServiceStatusDto {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>ServiceStatusDto</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ServiceStatusDto</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of ServiceStatusDto.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        if (data['environments']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['environments'])) {
+                throw new Error("Expected the field `environments` to be an array in the JSON data but got " + data['environments']);
+            }
+            // validate the optional field `environments` (array)
+            for (const item of data['environments']) {
+                EnvironmentStatusDto.validateJSON(item);
+            };
+        }
+
+        return true;
+    }
+
 
 }
+
+ServiceStatusDto.RequiredProperties = ["environments"];
 
 /**
  * @member {Array.<module:model/EnvironmentStatusDto>} environments

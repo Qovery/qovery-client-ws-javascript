@@ -94,8 +94,84 @@ class EnvironmentStatusDto {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>EnvironmentStatusDto</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EnvironmentStatusDto</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of EnvironmentStatusDto.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        if (data['applications']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['applications'])) {
+                throw new Error("Expected the field `applications` to be an array in the JSON data but got " + data['applications']);
+            }
+            // validate the optional field `applications` (array)
+            for (const item of data['applications']) {
+                ApplicationStatusDto.validateJSON(item);
+            };
+        }
+        if (data['containers']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['containers'])) {
+                throw new Error("Expected the field `containers` to be an array in the JSON data but got " + data['containers']);
+            }
+            // validate the optional field `containers` (array)
+            for (const item of data['containers']) {
+                ApplicationStatusDto.validateJSON(item);
+            };
+        }
+        if (data['databases']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['databases'])) {
+                throw new Error("Expected the field `databases` to be an array in the JSON data but got " + data['databases']);
+            }
+            // validate the optional field `databases` (array)
+            for (const item of data['databases']) {
+                DatabaseStatusDto.validateJSON(item);
+            };
+        }
+        if (data['helms']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['helms'])) {
+                throw new Error("Expected the field `helms` to be an array in the JSON data but got " + data['helms']);
+            }
+            // validate the optional field `helms` (array)
+            for (const item of data['helms']) {
+                ApplicationStatusDto.validateJSON(item);
+            };
+        }
+        // ensure the json data is a string
+        if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+            throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+        }
+        if (data['jobs']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['jobs'])) {
+                throw new Error("Expected the field `jobs` to be an array in the JSON data but got " + data['jobs']);
+            }
+            // validate the optional field `jobs` (array)
+            for (const item of data['jobs']) {
+                ApplicationStatusDto.validateJSON(item);
+            };
+        }
+        // ensure the json data is a string
+        if (data['project_id'] && !(typeof data['project_id'] === 'string' || data['project_id'] instanceof String)) {
+            throw new Error("Expected the field `project_id` to be a primitive type in the JSON string but got " + data['project_id']);
+        }
+
+        return true;
+    }
+
 
 }
+
+EnvironmentStatusDto.RequiredProperties = ["applications", "containers", "databases", "helms", "id", "jobs", "project_id", "state"];
 
 /**
  * @member {Array.<module:model/ApplicationStatusDto>} applications

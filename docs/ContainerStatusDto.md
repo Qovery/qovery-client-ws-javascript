@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currentState** | [**ContainerStatusDtoCurrentState**](ContainerStatusDtoCurrentState.md) |  | [optional] 
+**currentState** | [**ContainerStateDto**](ContainerStateDto.md) |  | [optional] 
 **image** | **String** |  | 
-**lastTerminatedState** | [**ContainerStatusDtoLastTerminatedState**](ContainerStatusDtoLastTerminatedState.md) |  | [optional] 
+**lastTerminatedState** | [**ContainerStateTerminatedDto**](ContainerStateTerminatedDto.md) |  | [optional] 
 **name** | **String** |  | 
 **restartCount** | **Number** |  | 
 

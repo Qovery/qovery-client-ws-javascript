@@ -82,8 +82,38 @@ class ContainerStateTerminatedDto {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>ContainerStateTerminatedDto</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ContainerStateTerminatedDto</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of ContainerStateTerminatedDto.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is a string
+        if (data['exit_code_message'] && !(typeof data['exit_code_message'] === 'string' || data['exit_code_message'] instanceof String)) {
+            throw new Error("Expected the field `exit_code_message` to be a primitive type in the JSON string but got " + data['exit_code_message']);
+        }
+        // ensure the json data is a string
+        if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
+            throw new Error("Expected the field `message` to be a primitive type in the JSON string but got " + data['message']);
+        }
+        // ensure the json data is a string
+        if (data['reason'] && !(typeof data['reason'] === 'string' || data['reason'] instanceof String)) {
+            throw new Error("Expected the field `reason` to be a primitive type in the JSON string but got " + data['reason']);
+        }
+
+        return true;
+    }
+
 
 }
+
+ContainerStateTerminatedDto.RequiredProperties = ["exit_code", "exit_code_message", "message", "reason", "signal"];
 
 /**
  * @member {Number} exit_code
@@ -96,6 +126,7 @@ ContainerStateTerminatedDto.prototype['exit_code'] = undefined;
 ContainerStateTerminatedDto.prototype['exit_code_message'] = undefined;
 
 /**
+ * Unix timestamp with millisecond precision
  * @member {Number} finished_at
  */
 ContainerStateTerminatedDto.prototype['finished_at'] = undefined;
@@ -116,6 +147,7 @@ ContainerStateTerminatedDto.prototype['reason'] = undefined;
 ContainerStateTerminatedDto.prototype['signal'] = undefined;
 
 /**
+ * Unix timestamp with millisecond precision
  * @member {Number} started_at
  */
 ContainerStateTerminatedDto.prototype['started_at'] = undefined;
