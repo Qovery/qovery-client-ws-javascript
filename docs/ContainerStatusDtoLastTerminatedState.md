@@ -1,4 +1,4 @@
-# WebsocketGateway.ContainerStateTerminatedDto
+# WebsocketGateway.ContainerStatusDtoLastTerminatedState
 
 ## Properties
 

@@ -57,36 +57,8 @@ class ServiceListPodsResponseDto {
         return obj;
     }
 
-    /**
-     * Validates the JSON data with respect to <code>ServiceListPodsResponseDto</code>.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ServiceListPodsResponseDto</code>.
-     */
-    static validateJSON(data) {
-        // check to make sure all required properties are present in the JSON string
-        for (const property of ServiceListPodsResponseDto.RequiredProperties) {
-            if (!data[property]) {
-                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
-            }
-        }
-        if (data['pods']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['pods'])) {
-                throw new Error("Expected the field `pods` to be an array in the JSON data but got " + data['pods']);
-            }
-            // validate the optional field `pods` (array)
-            for (const item of data['pods']) {
-                PodDto.validateJSON(item);
-            };
-        }
-
-        return true;
-    }
-
 
 }
-
-ServiceListPodsResponseDto.RequiredProperties = ["pods"];
 
 /**
  * @member {Array.<module:model/PodDto>} pods

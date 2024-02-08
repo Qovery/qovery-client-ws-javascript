@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lastHeartbeatTime** | **Number** | Unix timestamp with millisecond precision | [optional] 
-**lastTransitionTime** | **Number** | Unix timestamp with millisecond precision | [optional] 
+**lastHeartbeatTime** | **Number** |  | [optional] 
+**lastTransitionTime** | **Number** |  | [optional] 
 **message** | **String** |  | 
 **reason** | **String** |  | 
 **status** | **String** |  | 

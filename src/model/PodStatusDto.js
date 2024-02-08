@@ -91,52 +91,8 @@ class PodStatusDto {
         return obj;
     }
 
-    /**
-     * Validates the JSON data with respect to <code>PodStatusDto</code>.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PodStatusDto</code>.
-     */
-    static validateJSON(data) {
-        // check to make sure all required properties are present in the JSON string
-        for (const property of PodStatusDto.RequiredProperties) {
-            if (!data[property]) {
-                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
-            }
-        }
-        if (data['containers']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['containers'])) {
-                throw new Error("Expected the field `containers` to be an array in the JSON data but got " + data['containers']);
-            }
-            // validate the optional field `containers` (array)
-            for (const item of data['containers']) {
-                ContainerStatusDto.validateJSON(item);
-            };
-        }
-        // ensure the json data is a string
-        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
-            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
-        }
-        // ensure the json data is a string
-        if (data['service_version'] && !(typeof data['service_version'] === 'string' || data['service_version'] instanceof String)) {
-            throw new Error("Expected the field `service_version` to be a primitive type in the JSON string but got " + data['service_version']);
-        }
-        // ensure the json data is a string
-        if (data['state_message'] && !(typeof data['state_message'] === 'string' || data['state_message'] instanceof String)) {
-            throw new Error("Expected the field `state_message` to be a primitive type in the JSON string but got " + data['state_message']);
-        }
-        // ensure the json data is a string
-        if (data['state_reason'] && !(typeof data['state_reason'] === 'string' || data['state_reason'] instanceof String)) {
-            throw new Error("Expected the field `state_reason` to be a primitive type in the JSON string but got " + data['state_reason']);
-        }
-
-        return true;
-    }
-
 
 }
-
-PodStatusDto.RequiredProperties = ["containers", "name", "restart_count", "service_version", "state", "state_message", "state_reason"];
 
 /**
  * @member {Array.<module:model/ContainerStatusDto>} containers
@@ -159,7 +115,6 @@ PodStatusDto.prototype['restart_count'] = undefined;
 PodStatusDto.prototype['service_version'] = undefined;
 
 /**
- * Unix timestamp with millisecond precision
  * @member {Number} started_at
  */
 PodStatusDto.prototype['started_at'] = undefined;

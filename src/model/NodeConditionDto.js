@@ -77,51 +77,15 @@ class NodeConditionDto {
         return obj;
     }
 
-    /**
-     * Validates the JSON data with respect to <code>NodeConditionDto</code>.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>NodeConditionDto</code>.
-     */
-    static validateJSON(data) {
-        // check to make sure all required properties are present in the JSON string
-        for (const property of NodeConditionDto.RequiredProperties) {
-            if (!data[property]) {
-                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
-            }
-        }
-        // ensure the json data is a string
-        if (data['message'] && !(typeof data['message'] === 'string' || data['message'] instanceof String)) {
-            throw new Error("Expected the field `message` to be a primitive type in the JSON string but got " + data['message']);
-        }
-        // ensure the json data is a string
-        if (data['reason'] && !(typeof data['reason'] === 'string' || data['reason'] instanceof String)) {
-            throw new Error("Expected the field `reason` to be a primitive type in the JSON string but got " + data['reason']);
-        }
-        // ensure the json data is a string
-        if (data['status'] && !(typeof data['status'] === 'string' || data['status'] instanceof String)) {
-            throw new Error("Expected the field `status` to be a primitive type in the JSON string but got " + data['status']);
-        }
-        // ensure the json data is a string
-        if (data['type'] && !(typeof data['type'] === 'string' || data['type'] instanceof String)) {
-            throw new Error("Expected the field `type` to be a primitive type in the JSON string but got " + data['type']);
-        }
-
-        return true;
-    }
-
 
 }
 
-NodeConditionDto.RequiredProperties = ["message", "reason", "status", "type"];
-
 /**
- * Unix timestamp with millisecond precision
  * @member {Number} last_heartbeat_time
  */
 NodeConditionDto.prototype['last_heartbeat_time'] = undefined;
 
 /**
- * Unix timestamp with millisecond precision
  * @member {Number} last_transition_time
  */
 NodeConditionDto.prototype['last_transition_time'] = undefined;

@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import ContainerStateDto from './ContainerStateDto';
-import ContainerStateTerminatedDto from './ContainerStateTerminatedDto';
+import ContainerStatusDtoCurrentState from './ContainerStatusDtoCurrentState';
+import ContainerStatusDtoLastTerminatedState from './ContainerStatusDtoLastTerminatedState';
 
 /**
  * The ContainerStatusDto model module.
@@ -56,13 +56,13 @@ class ContainerStatusDto {
             obj = obj || new ContainerStatusDto();
 
             if (data.hasOwnProperty('current_state')) {
-                obj['current_state'] = ApiClient.convertToType(data['current_state'], ContainerStateDto);
+                obj['current_state'] = ContainerStatusDtoCurrentState.constructFromObject(data['current_state']);
             }
             if (data.hasOwnProperty('image')) {
                 obj['image'] = ApiClient.convertToType(data['image'], 'String');
             }
             if (data.hasOwnProperty('last_terminated_state')) {
-                obj['last_terminated_state'] = ApiClient.convertToType(data['last_terminated_state'], ContainerStateTerminatedDto);
+                obj['last_terminated_state'] = ContainerStatusDtoLastTerminatedState.constructFromObject(data['last_terminated_state']);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -74,45 +74,11 @@ class ContainerStatusDto {
         return obj;
     }
 
-    /**
-     * Validates the JSON data with respect to <code>ContainerStatusDto</code>.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ContainerStatusDto</code>.
-     */
-    static validateJSON(data) {
-        // check to make sure all required properties are present in the JSON string
-        for (const property of ContainerStatusDto.RequiredProperties) {
-            if (!data[property]) {
-                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
-            }
-        }
-        // validate the optional field `current_state`
-        if (data['current_state']) { // data not null
-          ContainerStateDto.validateJSON(data['current_state']);
-        }
-        // ensure the json data is a string
-        if (data['image'] && !(typeof data['image'] === 'string' || data['image'] instanceof String)) {
-            throw new Error("Expected the field `image` to be a primitive type in the JSON string but got " + data['image']);
-        }
-        // validate the optional field `last_terminated_state`
-        if (data['last_terminated_state']) { // data not null
-          ContainerStateTerminatedDto.validateJSON(data['last_terminated_state']);
-        }
-        // ensure the json data is a string
-        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
-            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
-        }
-
-        return true;
-    }
-
 
 }
 
-ContainerStatusDto.RequiredProperties = ["image", "name", "restart_count"];
-
 /**
- * @member {module:model/ContainerStateDto} current_state
+ * @member {module:model/ContainerStatusDtoCurrentState} current_state
  */
 ContainerStatusDto.prototype['current_state'] = undefined;
 
@@ -122,7 +88,7 @@ ContainerStatusDto.prototype['current_state'] = undefined;
 ContainerStatusDto.prototype['image'] = undefined;
 
 /**
- * @member {module:model/ContainerStateTerminatedDto} last_terminated_state
+ * @member {module:model/ContainerStatusDtoLastTerminatedState} last_terminated_state
  */
 ContainerStatusDto.prototype['last_terminated_state'] = undefined;
 

@@ -140,6 +140,8 @@ Class | Method | HTTP request | Description
  - [WebsocketGateway.ContainerStateDto](docs/ContainerStateDto.md)
  - [WebsocketGateway.ContainerStateTerminatedDto](docs/ContainerStateTerminatedDto.md)
  - [WebsocketGateway.ContainerStatusDto](docs/ContainerStatusDto.md)
+ - [WebsocketGateway.ContainerStatusDtoCurrentState](docs/ContainerStatusDtoCurrentState.md)
+ - [WebsocketGateway.ContainerStatusDtoLastTerminatedState](docs/ContainerStatusDtoLastTerminatedState.md)
  - [WebsocketGateway.DatabaseStatusDto](docs/DatabaseStatusDto.md)
  - [WebsocketGateway.EnvironmentStatusDto](docs/EnvironmentStatusDto.md)
  - [WebsocketGateway.MetricDto](docs/MetricDto.md)
@@ -163,5 +165,4 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
-Endpoints do not require authorization.
-
+All endpoints do not require authorization.

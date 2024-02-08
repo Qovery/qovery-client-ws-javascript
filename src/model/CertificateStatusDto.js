@@ -82,34 +82,8 @@ class CertificateStatusDto {
         return obj;
     }
 
-    /**
-     * Validates the JSON data with respect to <code>CertificateStatusDto</code>.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>CertificateStatusDto</code>.
-     */
-    static validateJSON(data) {
-        // check to make sure all required properties are present in the JSON string
-        for (const property of CertificateStatusDto.RequiredProperties) {
-            if (!data[property]) {
-                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
-            }
-        }
-        // ensure the json data is an array
-        if (!Array.isArray(data['dns_names'])) {
-            throw new Error("Expected the field `dns_names` to be an array in the JSON data but got " + data['dns_names']);
-        }
-        // ensure the json data is a string
-        if (data['state_message'] && !(typeof data['state_message'] === 'string' || data['state_message'] instanceof String)) {
-            throw new Error("Expected the field `state_message` to be a primitive type in the JSON string but got " + data['state_message']);
-        }
-
-        return true;
-    }
-
 
 }
-
-CertificateStatusDto.RequiredProperties = ["dns_names", "failed_issuance_attempt_count", "state"];
 
 /**
  * @member {Array.<String>} dns_names
@@ -122,25 +96,21 @@ CertificateStatusDto.prototype['dns_names'] = undefined;
 CertificateStatusDto.prototype['failed_issuance_attempt_count'] = undefined;
 
 /**
- * Unix timestamp with millisecond precision
  * @member {Number} last_failure_issuance_time
  */
 CertificateStatusDto.prototype['last_failure_issuance_time'] = undefined;
 
 /**
- * Unix timestamp with millisecond precision
  * @member {Number} not_after
  */
 CertificateStatusDto.prototype['not_after'] = undefined;
 
 /**
- * Unix timestamp with millisecond precision
  * @member {Number} not_before
  */
 CertificateStatusDto.prototype['not_before'] = undefined;
 
 /**
- * Unix timestamp with millisecond precision
  * @member {Number} renewal_time
  */
 CertificateStatusDto.prototype['renewal_time'] = undefined;

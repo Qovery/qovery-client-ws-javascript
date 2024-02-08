@@ -20,6 +20,8 @@ import ClusterStatusDto from './model/ClusterStatusDto';
 import ContainerStateDto from './model/ContainerStateDto';
 import ContainerStateTerminatedDto from './model/ContainerStateTerminatedDto';
 import ContainerStatusDto from './model/ContainerStatusDto';
+import ContainerStatusDtoCurrentState from './model/ContainerStatusDtoCurrentState';
+import ContainerStatusDtoLastTerminatedState from './model/ContainerStatusDtoLastTerminatedState';
 import DatabaseStatusDto from './model/DatabaseStatusDto';
 import EnvironmentStatusDto from './model/EnvironmentStatusDto';
 import MetricDto from './model/MetricDto';
@@ -48,7 +50,7 @@ import ServiceStatusApi from './api/ServiceStatusApi';
 
 
 /**
-* Describe the weboscket endpoints.<br>
+* Describe_the_weboscket_endpoints.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -126,6 +128,18 @@ export {
      * @property {module:model/ContainerStatusDto}
      */
     ContainerStatusDto,
+
+    /**
+     * The ContainerStatusDtoCurrentState model constructor.
+     * @property {module:model/ContainerStatusDtoCurrentState}
+     */
+    ContainerStatusDtoCurrentState,
+
+    /**
+     * The ContainerStatusDtoLastTerminatedState model constructor.
+     * @property {module:model/ContainerStatusDtoLastTerminatedState}
+     */
+    ContainerStatusDtoLastTerminatedState,
 
     /**
      * The DatabaseStatusDto model constructor.

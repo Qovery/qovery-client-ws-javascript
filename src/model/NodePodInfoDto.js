@@ -87,46 +87,8 @@ class NodePodInfoDto {
         return obj;
     }
 
-    /**
-     * Validates the JSON data with respect to <code>NodePodInfoDto</code>.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>NodePodInfoDto</code>.
-     */
-    static validateJSON(data) {
-        // check to make sure all required properties are present in the JSON string
-        for (const property of NodePodInfoDto.RequiredProperties) {
-            if (!data[property]) {
-                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
-            }
-        }
-        // ensure the json data is a string
-        if (data['environment_id'] && !(typeof data['environment_id'] === 'string' || data['environment_id'] instanceof String)) {
-            throw new Error("Expected the field `environment_id` to be a primitive type in the JSON string but got " + data['environment_id']);
-        }
-        // ensure the json data is a string
-        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
-            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
-        }
-        // ensure the json data is a string
-        if (data['namespace'] && !(typeof data['namespace'] === 'string' || data['namespace'] instanceof String)) {
-            throw new Error("Expected the field `namespace` to be a primitive type in the JSON string but got " + data['namespace']);
-        }
-        // ensure the json data is a string
-        if (data['project_id'] && !(typeof data['project_id'] === 'string' || data['project_id'] instanceof String)) {
-            throw new Error("Expected the field `project_id` to be a primitive type in the JSON string but got " + data['project_id']);
-        }
-        // ensure the json data is a string
-        if (data['service_id'] && !(typeof data['service_id'] === 'string' || data['service_id'] instanceof String)) {
-            throw new Error("Expected the field `service_id` to be a primitive type in the JSON string but got " + data['service_id']);
-        }
-
-        return true;
-    }
-
 
 }
-
-NodePodInfoDto.RequiredProperties = ["images_version", "name", "namespace"];
 
 /**
  * @member {Number} cpu_milli_limit

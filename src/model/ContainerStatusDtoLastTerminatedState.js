@@ -12,16 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
+import ContainerStateTerminatedDto from './ContainerStateTerminatedDto';
 
 /**
- * The ContainerStateTerminatedDto model module.
- * @module model/ContainerStateTerminatedDto
+ * The ContainerStatusDtoLastTerminatedState model module.
+ * @module model/ContainerStatusDtoLastTerminatedState
  * @version $(grep &#39;version&#39; _build/openapi.yaml | head -1 | tr &#39;:&#39; &#39;\n&#39; | tail -1 | tr -d &#39; &#39;)
  */
-class ContainerStateTerminatedDto {
+class ContainerStatusDtoLastTerminatedState {
     /**
-     * Constructs a new <code>ContainerStateTerminatedDto</code>.
-     * @alias module:model/ContainerStateTerminatedDto
+     * Constructs a new <code>ContainerStatusDtoLastTerminatedState</code>.
+     * @alias module:model/ContainerStatusDtoLastTerminatedState
+     * @implements module:model/ContainerStateTerminatedDto
      * @param exitCode {Number} 
      * @param exitCodeMessage {String} 
      * @param message {String} 
@@ -29,8 +31,8 @@ class ContainerStateTerminatedDto {
      * @param signal {Number} 
      */
     constructor(exitCode, exitCodeMessage, message, reason, signal) { 
-        
         ContainerStateTerminatedDto.initialize(this, exitCode, exitCodeMessage, message, reason, signal);
+        ContainerStatusDtoLastTerminatedState.initialize(this, exitCode, exitCodeMessage, message, reason, signal);
     }
 
     /**
@@ -47,15 +49,16 @@ class ContainerStateTerminatedDto {
     }
 
     /**
-     * Constructs a <code>ContainerStateTerminatedDto</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ContainerStatusDtoLastTerminatedState</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ContainerStateTerminatedDto} obj Optional instance to populate.
-     * @return {module:model/ContainerStateTerminatedDto} The populated <code>ContainerStateTerminatedDto</code> instance.
+     * @param {module:model/ContainerStatusDtoLastTerminatedState} obj Optional instance to populate.
+     * @return {module:model/ContainerStatusDtoLastTerminatedState} The populated <code>ContainerStatusDtoLastTerminatedState</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ContainerStateTerminatedDto();
+            obj = obj || new ContainerStatusDtoLastTerminatedState();
+            ContainerStateTerminatedDto.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('exit_code')) {
                 obj['exit_code'] = ApiClient.convertToType(data['exit_code'], 'Number');
@@ -88,33 +91,64 @@ class ContainerStateTerminatedDto {
 /**
  * @member {Number} exit_code
  */
-ContainerStateTerminatedDto.prototype['exit_code'] = undefined;
+ContainerStatusDtoLastTerminatedState.prototype['exit_code'] = undefined;
 
 /**
  * @member {String} exit_code_message
  */
-ContainerStateTerminatedDto.prototype['exit_code_message'] = undefined;
+ContainerStatusDtoLastTerminatedState.prototype['exit_code_message'] = undefined;
 
 /**
  * @member {Number} finished_at
  */
-ContainerStateTerminatedDto.prototype['finished_at'] = undefined;
+ContainerStatusDtoLastTerminatedState.prototype['finished_at'] = undefined;
 
 /**
  * @member {String} message
  */
-ContainerStateTerminatedDto.prototype['message'] = undefined;
+ContainerStatusDtoLastTerminatedState.prototype['message'] = undefined;
 
 /**
  * @member {String} reason
  */
-ContainerStateTerminatedDto.prototype['reason'] = undefined;
+ContainerStatusDtoLastTerminatedState.prototype['reason'] = undefined;
 
 /**
  * @member {Number} signal
  */
-ContainerStateTerminatedDto.prototype['signal'] = undefined;
+ContainerStatusDtoLastTerminatedState.prototype['signal'] = undefined;
 
+/**
+ * @member {Number} started_at
+ */
+ContainerStatusDtoLastTerminatedState.prototype['started_at'] = undefined;
+
+
+// Implement ContainerStateTerminatedDto interface:
+/**
+ * @member {Number} exit_code
+ */
+ContainerStateTerminatedDto.prototype['exit_code'] = undefined;
+/**
+ * @member {String} exit_code_message
+ */
+ContainerStateTerminatedDto.prototype['exit_code_message'] = undefined;
+/**
+ * @member {Number} finished_at
+ */
+ContainerStateTerminatedDto.prototype['finished_at'] = undefined;
+/**
+ * @member {String} message
+ */
+ContainerStateTerminatedDto.prototype['message'] = undefined;
+/**
+ * @member {String} reason
+ */
+ContainerStateTerminatedDto.prototype['reason'] = undefined;
+/**
+ * @member {Number} signal
+ */
+ContainerStateTerminatedDto.prototype['signal'] = undefined;
 /**
  * @member {Number} started_at
  */
@@ -123,7 +157,5 @@ ContainerStateTerminatedDto.prototype['started_at'] = undefined;
 
 
 
-
-
-export default ContainerStateTerminatedDto;
+export default ContainerStatusDtoLastTerminatedState;
 

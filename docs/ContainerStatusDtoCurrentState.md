@@ -1,4 +1,4 @@
-# WebsocketGateway.ContainerStateDto
+# WebsocketGateway.ContainerStatusDtoCurrentState
 
 ## Properties
 

@@ -12,22 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
+import ContainerStateDto from './ContainerStateDto';
 import ServiceStateDto from './ServiceStateDto';
 
 /**
- * The ContainerStateDto model module.
- * @module model/ContainerStateDto
+ * The ContainerStatusDtoCurrentState model module.
+ * @module model/ContainerStatusDtoCurrentState
  * @version $(grep &#39;version&#39; _build/openapi.yaml | head -1 | tr &#39;:&#39; &#39;\n&#39; | tail -1 | tr -d &#39; &#39;)
  */
-class ContainerStateDto {
+class ContainerStatusDtoCurrentState {
     /**
-     * Constructs a new <code>ContainerStateDto</code>.
-     * @alias module:model/ContainerStateDto
+     * Constructs a new <code>ContainerStatusDtoCurrentState</code>.
+     * @alias module:model/ContainerStatusDtoCurrentState
+     * @implements module:model/ContainerStateDto
      * @param state {module:model/ServiceStateDto} 
      */
     constructor(state) { 
-        
         ContainerStateDto.initialize(this, state);
+        ContainerStatusDtoCurrentState.initialize(this, state);
     }
 
     /**
@@ -40,15 +42,16 @@ class ContainerStateDto {
     }
 
     /**
-     * Constructs a <code>ContainerStateDto</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ContainerStatusDtoCurrentState</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ContainerStateDto} obj Optional instance to populate.
-     * @return {module:model/ContainerStateDto} The populated <code>ContainerStateDto</code> instance.
+     * @param {module:model/ContainerStatusDtoCurrentState} obj Optional instance to populate.
+     * @return {module:model/ContainerStatusDtoCurrentState} The populated <code>ContainerStatusDtoCurrentState</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ContainerStateDto();
+            obj = obj || new ContainerStatusDtoCurrentState();
+            ContainerStateDto.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('started_at')) {
                 obj['started_at'] = ApiClient.convertToType(data['started_at'], 'Number');
@@ -72,18 +75,37 @@ class ContainerStateDto {
 /**
  * @member {Number} started_at
  */
-ContainerStateDto.prototype['started_at'] = undefined;
+ContainerStatusDtoCurrentState.prototype['started_at'] = undefined;
 
 /**
  * @member {module:model/ServiceStateDto} state
  */
-ContainerStateDto.prototype['state'] = undefined;
+ContainerStatusDtoCurrentState.prototype['state'] = undefined;
 
 /**
  * @member {String} state_message
  */
-ContainerStateDto.prototype['state_message'] = undefined;
+ContainerStatusDtoCurrentState.prototype['state_message'] = undefined;
 
+/**
+ * @member {String} state_reason
+ */
+ContainerStatusDtoCurrentState.prototype['state_reason'] = undefined;
+
+
+// Implement ContainerStateDto interface:
+/**
+ * @member {Number} started_at
+ */
+ContainerStateDto.prototype['started_at'] = undefined;
+/**
+ * @member {module:model/ServiceStateDto} state
+ */
+ContainerStateDto.prototype['state'] = undefined;
+/**
+ * @member {String} state_message
+ */
+ContainerStateDto.prototype['state_message'] = undefined;
 /**
  * @member {String} state_reason
  */
@@ -92,7 +114,5 @@ ContainerStateDto.prototype['state_reason'] = undefined;
 
 
 
-
-
-export default ContainerStateDto;
+export default ContainerStatusDtoCurrentState;
 

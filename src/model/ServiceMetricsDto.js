@@ -72,48 +72,8 @@ class ServiceMetricsDto {
         return obj;
     }
 
-    /**
-     * Validates the JSON data with respect to <code>ServiceMetricsDto</code>.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ServiceMetricsDto</code>.
-     */
-    static validateJSON(data) {
-        // check to make sure all required properties are present in the JSON string
-        for (const property of ServiceMetricsDto.RequiredProperties) {
-            if (!data[property]) {
-                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
-            }
-        }
-        // validate the optional field `cpu`
-        if (data['cpu']) { // data not null
-          MetricDto.validateJSON(data['cpu']);
-        }
-        // validate the optional field `memory`
-        if (data['memory']) { // data not null
-          MetricDto.validateJSON(data['memory']);
-        }
-        // ensure the json data is a string
-        if (data['pod_name'] && !(typeof data['pod_name'] === 'string' || data['pod_name'] instanceof String)) {
-            throw new Error("Expected the field `pod_name` to be a primitive type in the JSON string but got " + data['pod_name']);
-        }
-        if (data['storages']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['storages'])) {
-                throw new Error("Expected the field `storages` to be an array in the JSON data but got " + data['storages']);
-            }
-            // validate the optional field `storages` (array)
-            for (const item of data['storages']) {
-                MetricDto.validateJSON(item);
-            };
-        }
-
-        return true;
-    }
-
 
 }
-
-ServiceMetricsDto.RequiredProperties = ["cpu", "memory", "pod_name", "storages"];
 
 /**
  * @member {module:model/MetricDto} cpu
